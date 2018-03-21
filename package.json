@@ -28,6 +28,30 @@
     "url": "https://github.com/llabake/Hello-Books/issues"
   },
   "homepage": "https://github.com/llabake/Hello-Books#readme",
+  "jest": {
+    "unmockedModulePathPatterns": [
+      "node_modules/react/",
+      "node_modules/enzyme/"
+    ],
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest"
+    },
+    "testEnvironment": "jsdom",
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/client/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "identity-obj-proxy"
+    },
+    "verbose": true,
+    "setupFiles": [
+      "jest-localstorage-mock",
+      "<rootDir>/test-setup.js"
+    ],
+    "setupTestFrameworkScriptFile": "jest-environment-jsdom"
+  },
   "dependencies": {
     "axios": "^0.17.1",
     "babel-cli": "^6.26.0",
@@ -44,8 +68,13 @@
     "chai": "^4.1.2",
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "expect": "^21.2.1",
     "express": "^4.16.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-environment-jsdom": "^23.0.0-alpha.0",
+    "jest-localstorage-mock": "^2.2.0",
     "jsonwebtoken": "^8.1.0",
     "mocha": "^4.0.1",
     "moment": "^2.21.0",
@@ -61,14 +90,16 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "regenerator-runtime": "^0.11.1",
     "sequelize": "^4.22.5",
+    "sinon": "^4.4.6",
     "supertest": "^3.0.0",
     "swagger-jsdoc": "^1.3.0",
     "sweetalert": "^2.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.3",
-    "babel-jest": "^22.4.0",
+    "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
@@ -86,7 +117,7 @@
     "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.2",
-    "jest": "^22.4.0",
+    "jest": "^22.4.2",
     "node-sass": "^4.7.2",
     "nyc": "^11.2.1",
     "redux-mock-store": "^1.5.1",

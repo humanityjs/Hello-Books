@@ -14,16 +14,16 @@ import ajaxLoader from '../media/ajax-loader.gif';
 
 
 /**
- * 
- * 
+ *
+ *
  * @export
  * @class HomePage
  * @extends {Component}
  */
-class HomePage extends Component {
+export class HomePage extends Component {
   /**
    * Creates an instance of HomePage.
-   * @param {any} props 
+   * @param {any} props
    * @memberof HomePage
    */
   constructor(props) {
@@ -34,7 +34,7 @@ class HomePage extends Component {
 
   /**
    * @returns {Array} most popular books array
-   * 
+   *
    * @memberof HomePage
    */
   componentWillMount() {
@@ -42,7 +42,7 @@ class HomePage extends Component {
   }
 
  /**
-  * 
+  *
   * @returns {function} initialises the side bav
   * @memberof HomePage
   */
@@ -54,15 +54,15 @@ class HomePage extends Component {
 
 
   /**
-  * 
-  * 
+  *
+  *
   * @returns {Object} html
   * @memberof HomePage
   */
   render () {
     const { popularBooks, loadingPopularBooks } = this.props;
     return (
-      <div>
+      <div id="homepage">
         <Header/>
         <Slider/>
         <div >
